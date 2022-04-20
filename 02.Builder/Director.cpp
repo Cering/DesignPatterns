@@ -1,4 +1,3 @@
-#pragma once
 #include "Director.h"
 
 Director::Director() : _builder(nullptr)

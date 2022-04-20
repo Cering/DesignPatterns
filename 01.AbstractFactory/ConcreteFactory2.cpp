@@ -1,4 +1,3 @@
-#pragma once
 #include "ConcreteFactory2.h"
 #include "ProductA2.h"
 #include "ProductB2.h"

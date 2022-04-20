@@ -1,4 +1,3 @@
-#pragma once
 #include "ConcreteBuilder1.h"
 
 ConcreteBuilder1::ConcreteBuilder1() : _result(nullptr)

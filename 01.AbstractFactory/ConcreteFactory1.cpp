@@ -1,4 +1,3 @@
-#pragma once
 #include <sstream>
 #include "ConcreteFactory1.h"
 #include "ProductA1.h"
