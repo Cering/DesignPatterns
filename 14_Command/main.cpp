@@ -11,7 +11,7 @@ int main()
     std::shared_ptr<Receiver> receiver_2(new Receiver());
     std::shared_ptr<Command>  command_2(new ConcreteCommand(receiver_2));
     std::shared_ptr<Receiver> receiver_3(new Receiver());
-    std::shared_ptr<Command>  command_3(new TemplateCommand<Receiver>(receiver_3, Receiver::ActionForTemplate));
+    std::shared_ptr<Command>  command_3(new TemplateCommand<Receiver>(receiver_3, &Receiver::ActionForTemplate));
 
     std::shared_ptr<Invoker> invoker(new Invoker());
 
