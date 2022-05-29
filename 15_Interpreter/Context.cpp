@@ -8,8 +8,8 @@ int Context::Lookup(std::shared_ptr<AbstractExpression> key) const
     auto it = _context_map.find(key);
     if(it != _context_map.end())
         return it->second;
-    std::cout << "Not found " << key->toString() << " in context, abort" << std::endl;
-    abort();
+    std::cout << "Not found " << key->toString() << " in context, exit" << std::endl;
+    exit(0);
 }
 
 void Context::Assign(std::shared_ptr<AbstractExpression> key, int val)

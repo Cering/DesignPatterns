@@ -48,8 +48,8 @@ Item ConcreteIterator<Item>::CurrentItem() const
 {
     if(IsDone())
     {
-        std::cout << "[" << this << "] CurrentItem() failed, abort" << std::endl;
-        abort();
+        std::cout << "[" << this << "] CurrentItem() failed, exit" << std::endl;
+        exit(0);
     }
     return _aggregate->Get(_current);
 }
