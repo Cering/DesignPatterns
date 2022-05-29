@@ -11,10 +11,7 @@ public:
 public:
     Product();
 private:
-    int _id;
     std::string _part_a;
     std::string _part_b;
     std::string _part_c;
-private:
-    static int _next_id;
 };

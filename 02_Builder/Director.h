@@ -4,10 +4,10 @@
 class Director
 {
 public:
-    void SetBuilder(Builder* builder);
-    Product* Construct();
+    void SetBuilder(std::shared_ptr<Builder> b);
+    std::shared_ptr<Product> Construct();
 public:
     Director();
 private:
-    Builder* _builder;
+    std::shared_ptr<Builder> _builder;
 };

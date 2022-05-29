@@ -4,13 +4,14 @@
 class ConcreteBuilder1 : public Builder
 {
 public:
-    virtual void BuildResult();
-    virtual void BuildPartA();
-    virtual void BuildPartB();
-    virtual void BuildPartC();
-    virtual Product* GetResult();
+    virtual void BuildResult() override;
+    virtual void BuildPartA() override;
+    virtual void BuildPartB() override;
+    virtual void BuildPartC() override;
+    virtual std::shared_ptr<Product> GetResult() override;
 public:
     ConcreteBuilder1();
+    virtual ~ConcreteBuilder1() = default;
 private:
-    Product* _result;
+    std::shared_ptr<Product> _result;
 };

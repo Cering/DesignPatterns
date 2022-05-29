@@ -1,3 +1,4 @@
+#include <iostream>
 #include "ConcreteBuilder1.h"
 
 ConcreteBuilder1::ConcreteBuilder1() : _result(nullptr)
@@ -6,7 +7,8 @@ ConcreteBuilder1::ConcreteBuilder1() : _result(nullptr)
 
 void ConcreteBuilder1::BuildResult()
 {
-    _result = new Product();
+    _result.reset(new Product());
+    std::cout << "[" << this << "] ConcreteBuilder1::BuildResult() [" << _result.get() << "]" << std::endl;
 }
 
 void ConcreteBuilder1::BuildPartA()
@@ -25,7 +27,7 @@ void ConcreteBuilder1::BuildPartC()
 {
 }
 
-Product* ConcreteBuilder1::GetResult()
+std::shared_ptr<Product> ConcreteBuilder1::GetResult()
 {
     return _result;
 }
