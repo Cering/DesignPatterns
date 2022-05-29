@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.1)
 
 project(design_patterns)
 
+enable_testing()
+
 add_subdirectory(01_AbstractFactory)
 add_subdirectory(02_Builder)
 add_subdirectory(03_Factory)

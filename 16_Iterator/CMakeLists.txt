@@ -18,3 +18,8 @@ add_executable(${TARGET}
 add_definitions(
     -g
 )
+
+add_test(
+    NAME ${TARGET}_test
+    COMMAND ${TARGET}
+)
