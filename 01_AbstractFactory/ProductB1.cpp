@@ -5,7 +5,7 @@ ProductB1::ProductB1(const std::string& id) : _id(id)
 {
 }
 
-void ProductB1::print()
+void ProductB1::Print()
 {
-    std::cout << "ProductB1[string]: " << _id << std::endl;
+    std::cout << "[" << this << "] ProductB1[string]: " << _id << std::endl;
 }

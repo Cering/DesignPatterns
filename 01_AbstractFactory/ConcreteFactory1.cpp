@@ -1,20 +1,18 @@
-#include <sstream>
+#include <iostream>
 #include "ConcreteFactory1.h"
 #include "ProductA1.h"
 #include "ProductB1.h"
 
-int ConcreteFactory1::_next_id = 0;
-
-AbstractProductA* ConcreteFactory1::CreateProductA()
+std::shared_ptr<AbstractProductA> ConcreteFactory1::CreateProductA()
 {
-    std::ostringstream oss;
-    oss << _next_id++;
-    return new ProductA1(oss.str());
+    std::shared_ptr<AbstractProductA> obj(new ProductA1("A1"));
+    std::cout << "[" << this << "] ConcreteFactory1::CreateProductA() A1 [" << obj.get() << "]" << std::endl;
+    return obj;
 }
 
-AbstractProductB* ConcreteFactory1::CreateProductB()
+std::shared_ptr<AbstractProductB> ConcreteFactory1::CreateProductB()
 {
-    std::ostringstream oss;
-    oss << _next_id++;
-    return new ProductB1(oss.str());
+    std::shared_ptr<AbstractProductB> obj(new ProductB1("B1"));
+    std::cout << "[" << this << "] ConcreteFactory1::CreateProductB() B1 [" << obj.get() << "]" << std::endl;
+    return obj;
 }

@@ -3,5 +3,9 @@
 class AbstractProductA
 {
 public:
-    virtual void print() = 0;
+    virtual void Print() = 0;
+public:
+    virtual ~AbstractProductA() = default;
+protected:
+    AbstractProductA() = default;
 };

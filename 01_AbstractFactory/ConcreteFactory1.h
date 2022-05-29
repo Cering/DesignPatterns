@@ -4,8 +4,8 @@
 class ConcreteFactory1 : public AbstractFactory
 {
 public:
-    virtual AbstractProductA* CreateProductA();
-    virtual AbstractProductB* CreateProductB();
-private:
-    static int _next_id;
+    virtual std::shared_ptr<AbstractProductA> CreateProductA() override;
+    virtual std::shared_ptr<AbstractProductB> CreateProductB() override;
+public:
+    virtual ~ConcreteFactory1() = default;
 };
