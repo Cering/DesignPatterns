@@ -6,7 +6,9 @@ class SubSingleton1 : public Singleton
 {
     friend class Singleton;
 public:
-    virtual void Print();
+    virtual void Print() override;
+public:
+    virtual ~SubSingleton1() = default;
 protected:
     SubSingleton1(const std::string& info);
 private:

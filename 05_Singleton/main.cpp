@@ -1,3 +1,4 @@
+#include <iostream>
 #include <stdlib.h>
 #include "Singleton.h"
 
@@ -8,15 +9,23 @@ int main(int argc, char** argv)
     {
         type = atoi(argv[1]);
     }
-    Singleton* instance = Singleton::Instance(type);
+    std::cout << "singleton with argv type: " << type << std::endl;
+    std::shared_ptr<Singleton> instance(Singleton::Instance((SingletonType)type));
     instance->Print();
 
-
-    Singleton* instance0 = Singleton::Instance();
+    std::cout << std::endl;
+    std::cout << "singleton with type: default" << std::endl;
+    std::shared_ptr<Singleton> instance0(Singleton::Instance());
     instance0->Print();
-    Singleton* instance1 = Singleton::Instance(1);
+
+    std::cout << std::endl;
+    std::cout << "singleton with type: 1" << std::endl;
+    std::shared_ptr<Singleton> instance1(Singleton::Instance(SINGLETON_TYPE_1));
     instance1->Print();
-    Singleton* instance2 = Singleton::Instance(2);
+
+    std::cout << std::endl;
+    std::cout << "singleton with type: 2" << std::endl;
+    std::shared_ptr<Singleton> instance2(Singleton::Instance(SINGLETON_TYPE_2));
     instance2->Print();
 
     return 0;

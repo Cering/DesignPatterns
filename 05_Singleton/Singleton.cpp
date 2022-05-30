@@ -3,29 +3,30 @@
 #include "SubSingleton1.h"
 #include "SubSingleton2.h"
 
-Singleton* Singleton::_instance = nullptr;
+std::shared_ptr<Singleton> Singleton::_instance(nullptr);
 
-Singleton* Singleton::Instance(int type)
+std::shared_ptr<Singleton> Singleton::Instance(SingletonType type)
 {
     if(!_instance)
     {
         switch(type)
         {
-            case 1:
-                _instance = new SubSingleton1("sub_singleton_1");
+            case SINGLETON_TYPE_1:
+                _instance.reset(new SubSingleton1("sub_singleton_1"));
                 break;
-            case 2:
-                _instance = new SubSingleton2(2);
+            case SINGLETON_TYPE_2:
+                _instance.reset(new SubSingleton2(2));
                 break;
             default:
-                _instance = new Singleton();
+                _instance.reset(new Singleton());
                 break;
         }
+        std::cout << "Singleton::Instance() create [" << _instance.get() << "] with type " << type << std::endl;
     }
     return _instance;
 }
 
 void Singleton::Print()
 {
-    std::cout << "Singleton: " << this << std::endl;
+    std::cout << "[" << this << "] Singleton: [" << _instance.get() << "]" << std::endl;
 }

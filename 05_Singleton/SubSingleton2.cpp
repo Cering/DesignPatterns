@@ -7,5 +7,6 @@ SubSingleton2::SubSingleton2(int info) : _info(info)
 
 void SubSingleton2::Print()
 {
-    std::cout << "SubSingleton2: " << _info << ", " << this << std::endl;
+    Singleton::Print();
+    std::cout << "[" << this << "] SubSingleton2: " << _info << std::endl;
 }
