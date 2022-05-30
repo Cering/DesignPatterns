@@ -9,12 +9,14 @@ ConcretePrototype1::ConcretePrototype1(const ConcretePrototype1& obj) : _info(ob
 {
 }
 
-Prototype* ConcretePrototype1::Clone()
+std::shared_ptr<Prototype> ConcretePrototype1::Clone()
 {
-    return new ConcretePrototype1(*this);
+    std::shared_ptr<Prototype> ret(new ConcretePrototype1(*this));
+    std::cout << "[" << this << "] ConcretePrototype1::Clone() to [" << ret.get() << "]" << std::endl;
+    return ret;
 }
 
 void ConcretePrototype1::Print()
 {
-    std::cout << "ConcretePrototype1[string]: " << _info << ", " << this << std::endl;
+    std::cout << "[" << this << "] ConcretePrototype1[string]: " << _info << std::endl;
 }
