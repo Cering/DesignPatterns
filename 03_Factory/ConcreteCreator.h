@@ -3,5 +3,8 @@
 
 class ConcreteCreator : public Creator
 {
-    virtual Product* FactoryMethod(int type);
+public:
+    virtual std::shared_ptr<Product> FactoryMethod(ProductType type) override;
+public:
+    virtual ~ConcreteCreator() = default;
 };

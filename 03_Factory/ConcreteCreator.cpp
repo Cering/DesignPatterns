@@ -1,20 +1,22 @@
+#include <iostream>
 #include "ConcreteCreator.h"
 #include "ConcreteProduct1.h"
 #include "ConcreteProduct2.h"
 
-Product* ConcreteCreator::FactoryMethod(int type)
+std::shared_ptr<Product> ConcreteCreator::FactoryMethod(ProductType type)
 {
-    Product* ret = nullptr;
+    std::shared_ptr<Product> ret(nullptr);
     switch(type)
     {
-        case 1:
-            ret = new ConcreteProduct1("product type 1");
+        case PRODUCT_TYPE_1:
+            ret.reset(new ConcreteProduct1("product type 1"));
             break;
-        case 2:
-            ret = new ConcreteProduct2(2);
+        case PRODUCT_TYPE_2:
+            ret.reset(new ConcreteProduct2(2));
             break;
         default:
             break;
     }
+    std::cout << "[" << this << "] ConcreteCreator::FactoryMethod() create product [" << ret.get() << "] with type " << type << std::endl;
     return ret;
 }
