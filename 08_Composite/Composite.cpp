@@ -3,8 +3,8 @@
 
 void Composite::Operation()
 {
-    std::cout << "[" << _id << "]Composite::Operation()" << std::endl;
-    for(auto it : _children)
+    std::cout << "[" << this << "]-[" << _id << "] Composite::Operation()" << std::endl;
+    for(const auto& it : _children)
     {
         it->Operation();
     }
@@ -12,6 +12,7 @@ void Composite::Operation()
 
 void Composite::Add(std::shared_ptr<Component> item)
 {
+    std::cout << "[" << this << "]-[" << _id << "] Composite::Add() [" << item.get() << "]" << std::endl;
     _children.emplace_back(item);
 }
 
@@ -22,6 +23,7 @@ void Composite::Remove(std::shared_ptr<Component> item)
     {
         if(*it == item)
         {
+            std::cout << "[" << this << "]-[" << _id << "] Composite::Remove() [" << item.get() << "]" << std::endl;
             it = _children.erase(it);
             break;
         }
@@ -32,17 +34,25 @@ void Composite::Remove(std::shared_ptr<Component> item)
 
 std::shared_ptr<Component> Composite::GetChild(int id)
 {
-    if(_id == id)
-        return shared_from_this();
-
-    std::list<std::shared_ptr<Component>>::iterator it = _children.begin();
-    while(it != _children.end())
+    std::shared_ptr<Component> ret(nullptr);
+    do
     {
-        std::shared_ptr<Component> ret = (*it)->GetChild(id);
-        if(ret)
-            return ret;
-        it++;
-    }
+        if(_id == id)
+        {
+            ret = shared_from_this();
+            break;
+        }
 
-    return nullptr;
+        std::list<std::shared_ptr<Component>>::iterator it = _children.begin();
+        while(it != _children.end())
+        {
+            ret = (*it)->GetChild(id);
+            if(ret)
+                break;
+            it++;
+        }
+    }while(false);
+
+    std::cout << "[" << this << "]-[" << _id << "] Composite::GetChild() [" << ret.get() << "]-[" << id << "]" << std::endl;
+    return ret;
 }

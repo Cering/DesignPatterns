@@ -5,6 +5,7 @@
 
 int main()
 {
+    std::cout << "initial:" << std::endl;
     std::shared_ptr<Component> root_0(new Composite());
     std::shared_ptr<Component> leaf_1(new Leaf());
     std::shared_ptr<Component> child_2(new Composite());
@@ -23,16 +24,22 @@ int main()
     child_3->Add(child_7);
     child_7->Add(leaf_8);
 
-    std::cout << "Origin:" << std::endl;
+    std::cout << std::endl;
+    std::cout << "origin operation:" << std::endl;
     root_0->Operation();
-    std::cout << "Remove leaf_8:" << std::endl;
+
+    std::cout << std::endl;
+    std::cout << "remove leaf_8 and operation:" << std::endl;
     root_0->Remove(leaf_8);
     root_0->Operation();
-    std::cout << "Remove child_2:" << std::endl;
+
+    std::cout << std::endl;
+    std::cout << "remove child_2 and operation:" << std::endl;
     root_0->Remove(child_2);
     root_0->Operation();
 
-    std::cout << "Get child_3:" << std::endl;
+    std::cout << std::endl;
+    std::cout << "get child_3 and operation:" << std::endl;
     std::shared_ptr<Component> tmp = root_0->GetChild(3);
     if(tmp)
         tmp->Operation();

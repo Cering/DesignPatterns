@@ -10,6 +10,7 @@ public:
     virtual std::shared_ptr<Component> GetChild(int id);
 public:
     Component();
+    virtual ~Component() = default;
 protected:
     int _id;
 private:

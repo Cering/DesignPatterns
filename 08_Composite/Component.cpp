@@ -8,7 +8,7 @@ Component::Component() : _id(_next_id++)
 
 void Component::Operation()
 {
-    std::cout << "[" << _id << "]Component::Operation()" << std::endl;
+    std::cout << "[" << this << "]-[" << _id << "] Component::Operation()" << std::endl;
 }
 
 void Component::Add(std::shared_ptr<Component> item)
