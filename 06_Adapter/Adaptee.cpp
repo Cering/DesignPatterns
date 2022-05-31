@@ -3,5 +3,5 @@
 
 void Adaptee::SpecificRequest()
 {
-    std::cout << "Adaptee::SpecificRequest()" << std::endl;
+    std::cout << "[" << this << "] Adaptee::SpecificRequest()" << std::endl;
 }

@@ -5,5 +5,7 @@
 class ClassAdapter : public Target, private Adaptee
 {
 public:
-    virtual void Request();
+    virtual void Request() override;
+public:
+    virtual ~ClassAdapter() = default;
 };

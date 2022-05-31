@@ -3,6 +3,6 @@
 
 void ClassAdapter::Request()
 {
-    std::cout << "ClassAdapter call:" << std::endl;
+    std::cout << "[" << this << "] ClassAdapter Request()" << std::endl;
     SpecificRequest();
 }

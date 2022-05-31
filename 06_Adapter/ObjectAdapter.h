@@ -1,14 +1,15 @@
 #pragma once
+#include <memory>
 #include "Target.h"
 #include "Adaptee.h"
 
 class ObjectAdapter : public Target
 {
 public:
-    virtual void Request();
+    virtual void Request() override;
 public:
     ObjectAdapter();
-    ~ObjectAdapter();
+    virtual ~ObjectAdapter() = default;
 private:
-    Adaptee* _adaptee;
+    std::shared_ptr<Adaptee> _adaptee;
 };
