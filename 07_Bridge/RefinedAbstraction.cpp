@@ -1,29 +1,28 @@
+#include <iostream>
 #include "RefinedAbstraction.h"
 #include "ConcreteImplementorA.h"
 #include "ConcreteImplementorB.h"
 
-RefinedAbstraction::RefinedAbstraction(int type)
+RefinedAbstraction::RefinedAbstraction(ImplementorType type)
 {
     switch(type)
     {
         default:
-        case 1:
-            _imp = new ConcreteImplementorA();
+        case IMPLEMENTOR_TYPE_A:
+            _imp.reset(new ConcreteImplementorA());
             break;
-        case 2:
-            _imp = new ConcreteImplementorB();
+        case IMPLEMENTOR_TYPE_B:
+            _imp.reset(new ConcreteImplementorB());
             break;
     }
-}
-
-RefinedAbstraction::~RefinedAbstraction()
-{
-    if(_imp)
-        delete _imp;
+    std::cout << "[" << this << "] RefinedAbstraction() use implementor type " << type << std::endl;
 }
 
 void RefinedAbstraction::Operation()
 {
     if(_imp)
+    {
+        std::cout << "[" << this << "] RefinedAbstraction::Operation() imp [" << _imp.get() << "]" << std::endl;
         _imp->OperationImp();
+    }
 }

@@ -3,5 +3,5 @@
 
 void ConcreteImplementorA::OperationImp()
 {
-    std::cout << "Call ConcreteImplementorA::OperationImp()" << std::endl;
+    std::cout << "[" << this << "] ConcreteImplementorA::OperationImp()" << std::endl;
 }

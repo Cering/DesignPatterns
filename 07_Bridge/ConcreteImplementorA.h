@@ -4,5 +4,7 @@
 class ConcreteImplementorA : public Implementor
 {
 public:
-    virtual void OperationImp();
+    virtual void OperationImp() override;
+public:
+    virtual ~ConcreteImplementorA() = default;
 };
