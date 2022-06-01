@@ -6,4 +6,6 @@ public:
     virtual void Request() = 0;
 public:
     virtual ~Subject() = default;
+protected:
+    Subject() = default;
 };

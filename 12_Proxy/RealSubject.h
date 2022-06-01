@@ -4,7 +4,7 @@
 class RealSubject : public Subject
 {
 public:
-    void Request();
+    virtual void Request() override;
 public:
     virtual ~RealSubject() = default;
 };

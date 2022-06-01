@@ -3,5 +3,5 @@
 
 void RealSubject::Request()
 {
-    std::cout << "RealSubject:Request()" << std::endl;
+    std::cout << "[" << this << "] RealSubject:Request()" << std::endl;
 }

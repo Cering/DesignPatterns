@@ -3,13 +3,13 @@
 
 int main()
 {
+    std::cout << "use proxy with authority:" << std::endl;
     std::shared_ptr<Subject> subject1(new Proxy());
-    std::shared_ptr<Subject> subject2(new Proxy(false));
-
-    std::cout << "subject1 with authority:" << std::endl;
     subject1->Request();
 
-    std::cout << std::endl << "subject2 without authority:" << std::endl;
+    std::cout << std::endl;
+    std::cout << "use proxy without authority:" << std::endl;
+    std::shared_ptr<Subject> subject2(new Proxy(false));
     subject2->Request();
 
     return 0;

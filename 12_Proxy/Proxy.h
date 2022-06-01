@@ -5,8 +5,7 @@
 class Proxy : public Subject
 {
 public:
-    void Request();
-    void SetFlag(bool flag);
+    virtual void Request() override;
 public:
     Proxy(bool flag=true);
     virtual ~Proxy() = default;
