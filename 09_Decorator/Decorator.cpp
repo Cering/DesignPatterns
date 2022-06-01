@@ -1,12 +1,12 @@
 #include <iostream>
 #include "Decorator.h"
 
-Decorator::Decorator(Component* item) : _component(item)
+Decorator::Decorator(std::shared_ptr<Component> item) : _component(item)
 {
 }
 
 void Decorator::Operation()
 {
-    std::cout << "Default Decorator::Operation()" << std::endl;
+    std::cout << "[" << this << "] Default Decorator::Operation()" << std::endl;
     _component->Operation();
 }

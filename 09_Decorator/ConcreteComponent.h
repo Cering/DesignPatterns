@@ -4,7 +4,7 @@
 class ConcreteComponent : public Component
 {
 public:
-    virtual void Operation();
+    virtual void Operation() override;
 public:
     virtual ~ConcreteComponent() = default;
 };

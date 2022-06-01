@@ -5,16 +5,19 @@
 
 int main()
 {
+    std::cout << "use component:" << std::endl;
     std::shared_ptr<Component> component(new ConcreteComponent());
-    std::shared_ptr<Component> decorator1(new Decorator(component.get()));
-    std::shared_ptr<Component> decorator2(new ConcreteDecorator(component.get()));
-
     component->Operation();
-    std::cout << std::endl;
 
+    std::cout << std::endl;
+    std::cout << "use default decorator:" << std::endl;
+    std::shared_ptr<Component> decorator1(new Decorator(component));
     decorator1->Operation();
-    std::cout << std::endl;
 
+
+    std::cout << std::endl;
+    std::cout << "use concrete decorator:" << std::endl;
+    std::shared_ptr<Component> decorator2(new ConcreteDecorator(component));
     decorator2->Operation();
 
     return 0;

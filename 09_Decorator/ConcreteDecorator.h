@@ -4,9 +4,9 @@
 class ConcreteDecorator : public Decorator
 {
 public:
-    virtual void Operation();
+    virtual void Operation() override;
 public:
-    ConcreteDecorator(Component* item);
+    ConcreteDecorator(std::shared_ptr<Component> item);
     virtual ~ConcreteDecorator() = default;
 private:
     void AddedBehavior();

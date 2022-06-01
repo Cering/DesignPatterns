@@ -1,4 +1,5 @@
 #pragma once
+#include <memory>
 #include "Component.h"
 
 class Decorator : public Component
@@ -6,8 +7,8 @@ class Decorator : public Component
 public:
     virtual void Operation();
 public:
-    Decorator(Component* item);
+    Decorator(std::shared_ptr<Component> item);
     virtual ~Decorator() = default;
 protected:
-    Component* _component;
+    std::shared_ptr<Component> _component;
 };

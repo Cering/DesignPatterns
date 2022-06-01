@@ -3,5 +3,5 @@
 
 void ConcreteComponent::Operation()
 {
-    std::cout << "ConcreteComponent::Operation()" << std::endl;
+    std::cout << "[" << this << "] ConcreteComponent::Operation()" << std::endl;
 }
