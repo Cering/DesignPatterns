@@ -16,12 +16,12 @@ std::shared_ptr<Flyweight> FlyweightFactory::GetFlyweight(char key)
     auto it = _flyweight.find(key);
     if(it != _flyweight.end())
     {
-        std::cout << "Found existing flyweight: " << key << std::endl;
+        std::cout << "[" << this << "] FlyweightFactory::GetFlyweight() found key: [" << key << "]-[" << it->second.get() << "]" << std::endl;
         return it->second;
     }
 
-    std::cout << "Not found flyweight and create: " << key << std::endl;
     std::shared_ptr<Flyweight> item(new ConcreteFlyweight(key));
     _flyweight.emplace(std::make_pair(key, item));
+    std::cout << "[" << this << "] FlyweightFactory::GetFlyweight() not found key and create: [" << key << "]-[" << item.get() << "]" << std::endl;
     return item;
 }

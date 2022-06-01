@@ -4,7 +4,7 @@
 class ConcreteFlyweight : public Flyweight
 {
 public:
-    void Operation(int extrinsicState);
+    void Operation(int extrinsicState) override;
 public:
     ConcreteFlyweight(char intrinsicState);
     virtual ~ConcreteFlyweight() = default;

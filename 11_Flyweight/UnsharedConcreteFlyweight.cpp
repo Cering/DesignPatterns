@@ -7,5 +7,5 @@ UnsharedConcreteFlyweight::UnsharedConcreteFlyweight(char intrinsicState) : _int
 
 void UnsharedConcreteFlyweight::Operation(int extrinsicState)
 {
-    std::cout << "[" << this << "]UnsharedConcreteFlyweight::Operation(): " << _intrinsic_state << " + " << extrinsicState << std::endl;
+    std::cout << "[" << this << "] UnsharedConcreteFlyweight::Operation(): [" << _intrinsic_state << "]-[" << extrinsicState << "]" << std::endl;
 }
