@@ -3,5 +3,5 @@
 
 void ModuleB::Function2()
 {
-    std::cout << "ModuleB::Function2()" << std::endl;
+    std::cout << "[" << this << "] ModuleB::Function2()" << std::endl;
 }

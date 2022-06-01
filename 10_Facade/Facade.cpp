@@ -18,7 +18,7 @@ std::shared_ptr<Facade> Facade::Instance()
 
 void Facade::SimpleFunction()
 {
-    std::cout << "Facade::SimpleFunction()" << std::endl;
+    std::cout << "[" << this << "] Facade::SimpleFunction()" << std::endl;
     _module_a->Function1();
     _module_b->Function2();
 }
