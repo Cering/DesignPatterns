@@ -4,8 +4,8 @@
 class NoTerminalExpressionPlus : public AbstractExpression
 {
 public:
-    virtual int Interpret(std::shared_ptr<Context> context);
-    virtual std::string toString();
+    virtual int Interpret(std::shared_ptr<Context> context) override;
+    virtual std::string toString() override;
 public:
     NoTerminalExpressionPlus(std::shared_ptr<AbstractExpression> l, std::shared_ptr<AbstractExpression> r);
     virtual ~NoTerminalExpressionPlus() = default;

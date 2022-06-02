@@ -9,4 +9,6 @@ public:
     virtual std::string toString() = 0;
 public:
     virtual ~AbstractExpression() = default;
+protected:
+    AbstractExpression() = default;
 };
