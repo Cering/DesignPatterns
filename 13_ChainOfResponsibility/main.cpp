@@ -10,10 +10,12 @@ int main()
     std::cout << "send request A:" << std::endl;
     handler_1->HandleRequest(REQUEST_A);
 
-    std::cout << std::endl << "send request B:" << std::endl;
+    std::cout << std::endl;
+    std::cout << "send request B:" << std::endl;
     handler_1->HandleRequest(REQUEST_B);
 
-    std::cout << std::endl << "send request C:" << std::endl;
+    std::cout << std::endl;
+    std::cout << "send request C:" << std::endl;
     handler_1->HandleRequest(REQUEST_C);
 
     return 0;

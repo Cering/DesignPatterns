@@ -4,7 +4,7 @@
 class ConcreteHandler1 : public Handler
 {
 public:
-    virtual void HandleRequest(RequestType req);
+    virtual void HandleRequest(RequestType req) override;
 public:
     ConcreteHandler1(std::shared_ptr<Handler> s);
     virtual ~ConcreteHandler1() = default;
