@@ -6,4 +6,6 @@ public:
     virtual void Execute() = 0;
 public:
     virtual ~Command() = default;
+protected:
+    Command() = default;
 };

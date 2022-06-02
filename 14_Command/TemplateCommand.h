@@ -21,11 +21,12 @@ private:
 template <class Callback>
 TemplateCommand<Callback>::TemplateCommand(std::shared_ptr<Callback> r, Action a) : _receiver(r), _action(a)
 {
+    std::cout << "[" << this << "] TemplateCommand() get receiver [" << _receiver.get() << "]" << std::endl;
 }
 
 template <class Callback>
 void TemplateCommand<Callback>::Execute()
 {
-    std::cout << "[" << this << "] Call TemplateCommand::Execute()" << std::endl;
+    std::cout << "[" << this << "] TemplateCommand::Execute() call receiver [" << _receiver.get() << "]" << std::endl;
     ((*_receiver).*_action)();
 }
