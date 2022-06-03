@@ -18,8 +18,7 @@ public:
     State GetState() const;
     void PrintState() const;
 public:
-    ConcreteSubject() = default;
-    ~ConcreteSubject() = default;
+    virtual ~ConcreteSubject() = default;
 private:
     State _subject_state;
 };
