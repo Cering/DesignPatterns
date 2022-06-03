@@ -13,12 +13,12 @@ int Memento::GetId() const
 
 State Memento::GetState() const
 {
-    std::cout << "Get " << _mem_state << " from memento[" << _id << "]" << std::endl;
+    std::cout << "Get " << _mem_state << " from memento [" << this << "]-[" << _id << "]" << std::endl;
     return _mem_state;
 }
 
 void Memento::SetState(const State& s)
 {
-    std::cout << "Set " << s << " into memento[" << _id << "]" << std::endl;
+    std::cout << "Set " << s << " into memento [" << this << "]-[" << _id << "]" << std::endl;
     _mem_state = s;
 }

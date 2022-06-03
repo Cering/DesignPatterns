@@ -28,18 +28,22 @@ void Originator::SetFloat(float f)
 
 void Originator::PrintState() const
 {
-    std::cout << "Current state: " << _state << std::endl;
+    std::cout << "[" << this << "] Originator::PrintState() " << _state << std::endl;
 }
 
 void Originator::SetMemento(std::shared_ptr<Memento> m)
 {
     if(m)
+    {
+        std::cout << "[" << this << "] Originator::SetMemento() [" << m.get() << "]-[" << m->GetId() << "]" << std::endl;
         _state = m->GetState();
+    }
 }
 
 std::shared_ptr<Memento> Originator::CreateMemento()
 {
     std::shared_ptr<Memento> ret(new Memento());
     ret->SetState(_state);
+    std::cout << "[" << this << "] Originator::CreateMemento() [" << ret.get() << "]-[" << ret->GetId() << "]" << std::endl;
     return ret;
 }
