@@ -11,4 +11,6 @@ public:
     virtual int Count() const = 0;
 public:
     virtual ~Aggregate() = default;
+protected:
+    Aggregate() = default;
 };
