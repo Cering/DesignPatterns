@@ -6,7 +6,7 @@
 class ConcreteMediator : public Mediator, public std::enable_shared_from_this<ConcreteMediator>
 {
 public:
-    virtual void HandleMessage(MESSAGE_ID msg_id, const std::string& msg_info) override;
+    virtual void HandleMessage(MessageId msg_id, const std::string& msg_info) override;
     virtual void CreateColleagues() override;
     void Test();
 public:

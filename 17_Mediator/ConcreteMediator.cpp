@@ -7,9 +7,9 @@ void ConcreteMediator::CreateColleagues()
     _colleague_2.reset(new ConcreteColleague2(shared_from_this()));
 }
 
-void ConcreteMediator::HandleMessage(MESSAGE_ID msg_id, const std::string& msg_info)
+void ConcreteMediator::HandleMessage(MessageId msg_id, const std::string& msg_info)
 {
-    std::cout << "ConcreteMediator::HandleMessage(): [" << msg_id << "] - " << msg_info << std::endl;
+    std::cout << "[" << this << "] ConcreteMediator::HandleMessage(): [" << msg_id << "] - " << msg_info << std::endl;
     switch(msg_id)
     {
         case MESSAGE_1_TO_2:

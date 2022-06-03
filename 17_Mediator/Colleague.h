@@ -11,5 +11,7 @@ public:
     Colleague(std::shared_ptr<Mediator> m) : _mediator(m) {}
     virtual ~Colleague() = default;
 protected:
+    Colleague() = default;
+protected:
     std::weak_ptr<Mediator> _mediator;
 };
