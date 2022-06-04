@@ -9,4 +9,6 @@ protected:
     virtual void PrimitiveOperation2() = 0;
 public:
     virtual ~AbstractClass() = default;
+protected:
+    AbstractClass() = default;
 };
