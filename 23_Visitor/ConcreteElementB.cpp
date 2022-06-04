@@ -15,7 +15,7 @@ void ConcreteElementB::Accept(std::shared_ptr<Visitor> v)
     }
 }
 
-int ConcreteElementB::OperationB() const
+char ConcreteElementB::OperationB() const
 {
     return _var_char;
 }

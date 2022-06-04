@@ -5,7 +5,7 @@ class ConcreteElementB : public Element, public std::enable_shared_from_this<Con
 {
 public:
     virtual void Accept(std::shared_ptr<Visitor> v) override;
-    int OperationB() const;
+    char OperationB() const;
 public:
     ConcreteElementB(char c);
     virtual ~ConcreteElementB() = default;
