@@ -8,7 +8,7 @@ public:
     static ConcreteStateA* Instance();
 public:
     virtual ~ConcreteStateA() = default;
-private:
+protected:
     ConcreteStateA() = default;
 private:
     static ConcreteStateA* _instance;

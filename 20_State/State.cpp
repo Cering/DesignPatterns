@@ -3,5 +3,6 @@
 
 void State::ChangeState(Context* ctx, State* s)
 {
-    ctx->ChangeState(s);
+    if(ctx)
+        ctx->ChangeState(s);
 }

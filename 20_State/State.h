@@ -10,4 +10,6 @@ protected:
     void ChangeState(Context* ctx, State* s);
 public:
     virtual ~State() = default;
+protected:
+    State() = default;
 };
